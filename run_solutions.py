@@ -7,7 +7,7 @@ import sys
 from base_solution import BaseSolution
 
 
-def load_solution_class(file_number):
+def load_solution_class(file_number, folder):
     file_name = os.path.join("questions", f"{file_number}.py")
     if not os.path.exists(file_name):
         raise FileNotFoundError(f"{file_name} not found in 'questions/' directory.")
@@ -42,7 +42,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
+def run_solutions(questions_folder: str = 'questions'):
     args = parse_args()
 
     question_number = args.question or input("Enter question number: ").strip()
@@ -58,7 +58,7 @@ def main():
             print(f"Error parsing inputs: {e}")
             sys.exit(1)
 
-    solution: BaseSolution = load_solution_class(question_number)
+    solution: BaseSolution = load_solution_class(question_number, questions_folder)
     print(f"\nQuestion: {getattr(solution, 'title', 'No question description found.')}\n")
 
     if mode == "a":
@@ -67,7 +67,3 @@ def main():
         solution.run_manual(inputs_from_cli)
     else:
         print("Invalid mode. Choose 'a' or 'm'.")
-
-
-if __name__ == "__main__":
-    main()
