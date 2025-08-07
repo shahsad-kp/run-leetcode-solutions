@@ -2,8 +2,8 @@ import ast
 import inspect
 from typing import Callable, Optional, Any
 
-from test_cases import TestCases
-from test_value import TestValue
+from run_leetcode_solutions.test_cases import TestCases
+from run_leetcode_solutions.test_value import TestValue
 
 
 class BaseSolution:
