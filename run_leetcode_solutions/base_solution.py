@@ -43,7 +43,7 @@ class BaseSolution:
         auto_test = getattr(self, "automatic_tests", None)
         if not auto_test:
             raise ValueError("No automatic tests defined.")
-        auto_test.run(self.get_solution_method())
+        return auto_test.run(self.get_solution_method())
 
     def __str__(self):
         return self.title

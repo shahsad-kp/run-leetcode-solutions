@@ -6,7 +6,7 @@ class TestCases:
         self.cases = cases
         self._method = method
 
-    def run(self, _method: Optional[Callable] = None):
+    def run(self, _method: Optional[Callable] = None) -> bool:
         if (self._method or _method) is None:
             raise ValueError("Test method not resolved")
         passed = 0
