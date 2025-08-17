@@ -1,5 +1,5 @@
 from typing import Optional, Callable
-from test_value import TestValue
+from run_leetcode_solutions.test_value import TestValue
 
 class TestCases:
     def __init__(self, *cases: TestValue, method: Optional[Callable] = None):
