@@ -22,6 +22,7 @@ class TestCases:
                 else:
                     print(f"❌ {idx}: {str(case)}: {output}\n")
         print(f"\n{passed}/{len(self.cases)} test case(s) passed.")
+        return passed == len(self.cases)
 
     def __str__(self):
         return f"TestCases({len(self.cases)} cases)"
