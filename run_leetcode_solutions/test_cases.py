@@ -9,6 +9,7 @@ class TestCases:
     def run(self, _method: Optional[Callable] = None) -> bool:
         if (self._method or _method) is None:
             raise ValueError("Test method not resolved")
+        _method = _method or self._method
         passed = 0
         for idx, case in enumerate(self.cases, 1):
             try:
