@@ -8,9 +8,7 @@ class TestValue:
 
     def run(self, _method: Callable) -> tuple[bool, Any]:
         output = _method(*self.inputs)
-        if output != self.expected:
-            return False, self.expected
-        return True, output
+        return output == self.expected, output
 
     def __str__(self):
         return f"Test(inputs={self.inputs}, expected={self.expected})"
